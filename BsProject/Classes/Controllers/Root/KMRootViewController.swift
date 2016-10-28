@@ -15,11 +15,13 @@ class KMRootViewController: KMMainframeViewController {
         
         let leftVc = KMLeftViewController()
         let rigthVc = KMTabBarController()
+        leftVc.leftViewWidthScale = 0.6 // 左边视图占屏宽比
+        
         self.leftViewController = leftVc
         self.rightViewController = rigthVc
         
         // 设置左边视图控制最大占据屏幕总宽度的比例
-        self.leftViewControllerMaxScaleOfWidth = 0.6
+        self.leftViewControllerMaxScaleOfWidth = leftVc.leftViewWidthScale
         
         // 左边视图控制器刚开始展示的区域起始值占自身总宽度的比例
         self.leftViewControllerStartScaleOfWidth = self.leftViewControllerMaxScaleOfWidth * 0.5
